@@ -24,5 +24,8 @@ order_trans <- read.transactions(
   header = T
 )
 summary(order_trans)
-# when using split transactions needs the transactions first then transaction ID
+
+# Using split and coercion ####
+# using split(what, by) we're splitting items by transactionID
 order_trans2 <- as(split(orders[, "item"], orders[, "transactionID"]), "transactions")
+summary(order_trans2)
